@@ -15,7 +15,7 @@ const getNextSequenceValue = async () => {
 urlController.get("/:shorturl", (req, res) => {
   URLModel.findOne({ shortURL: req.params.shorturl })
     .then((url) => {
-      res.status(302).json({ originalURL: url.originalURL });
+      res.status(200).json({ originalURL: url.originalURL });
     })
     .catch((err) => {
       res.status(500).json({ error: err });

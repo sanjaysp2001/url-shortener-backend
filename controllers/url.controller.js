@@ -26,7 +26,6 @@ urlController.post("/createurl", (req, res) => {
         };
         //console.log(encode(uniqueId));
         url = await URLModel.create(createdURL);
-        console.log(url);
       }
       res.status(200).json({
         message: "Success! Short URL generated successfully",

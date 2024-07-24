@@ -12,6 +12,16 @@ const getNextSequenceValue = async () => {
   );
   return sequence.seq;
 };
+urlController.get("/:shorturl", (req, res) => {
+  URLModel.findOne({ shortURL: req.params.shorturl })
+    .then((url) => {
+      res.status(200).json({ originalURL: url.originalURL });
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err });
+    });
+});
+
 urlController.post("/createurl", (req, res) => {
   const longURL = req.body.url;
   URLModel.findOne({ originalURL: longURL })

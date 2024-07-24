@@ -27,7 +27,7 @@ mongoose
     console.log("Database connection successful");
     app
       .listen(port, () => {
-        console.log(`Server is running on ${port}`);
+        console.log(`Server is running!`);
       })
       .on("error", (err) => {
         console.log("Server creation failed:\n", err);

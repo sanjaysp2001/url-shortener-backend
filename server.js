@@ -16,9 +16,9 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use("/", urlController);
 
-// app.get("/", (req, res) => {
-//   res.send("Server is running!");
-// });
+app.get("/", (req, res) => {
+  res.send("Server is running!");
+});
 
 
 mongoose
